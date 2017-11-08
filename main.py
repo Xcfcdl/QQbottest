@@ -13,7 +13,12 @@ from Tenseijinngo import Tenseijinngo
 def onQQMessage(bot, contact, member, content):
     if contact.ctype == 'buddy':
         if not sql_do.get_oneusers(contact.qq):
-            sql_do.usersinsert(contact.qq, 1, 0, 0, 0, 0)
+            try:
+                sql_do.bulid_db()
+            except:
+                pass
+            finally:
+                sql_do.usersinsert(contact.qq, 1, 0, 0, 0, 0)
         _qq, _model1, _model2, _model3, _model4, _model5 = sql_do.get_oneusers(contact.qq)[0]
         if content == '开始五十音测试':
             _model1 = 0
