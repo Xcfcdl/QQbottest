@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+"""QQbot for Japanese's kana learn test"""
 # -*- coding: utf-8 -*-
 from qqbot import QQBotSlot as qqbotslot, RunBot
 from kanaTest import TestSystem
